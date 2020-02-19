@@ -1,0 +1,210 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Llistes a python &#8212; Practica 1 1.01 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Introducció" href="cap1.html" />
+    <link rel="prev" title="Pràctica 1 - Documentació" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cap1.html" title="Introducció"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Pràctica 1 - Documentació"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="llistes-a-python">
+<h1>Llistes a python<a class="headerlink" href="#llistes-a-python" title="Permalink to this headline">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Autors:</th><td class="field-body">Anass Anhari, Marcel Compte i Daniel Alamillo</td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="topic">
+<p class="topic-title first">Definició</p>
+<ul class="simple">
+<li>Una llista és un conjunt ordenat de dades en que cadascun dels
+seus element està relacionat amb un índex, corresponent a la
+posició que ocupa.</li>
+<li>Al contrari que les cadenes de caràcters (<em>strings</em>), admeten
+qualsevol tipus de paràmetre (incloent-hi els propis strings,
+a part de lletres, enters, decimals, tuples, altres llistes…).
+Tant les llistes com els <em>strings</em> (entre altres conjunts ordenats
+de dades), formen part de les anomenades <em>seqüències</em> (dins
+l’argot de <em>Python</em>).</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="topic">
+<p class="topic-title first">Creació d’una llista</p>
+<ul>
+<li><p class="first">Les llistes s’identifiquen amb els símbols <em>[</em> i <em>]</em> i els seus
+element van separats per comes ( <em>,</em> ). Així doncs, per crear-les
+necessitarem introduïr elements entre claudàtors separats per
+comes, de la següent forma:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">i</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span> <span class="o">=</span> <span class="p">[</span> <span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">t</span> <span class="o">=</span> <span class="p">[</span><span class="mi">25</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="mi">5</span><span class="p">),</span> <span class="p">[</span><span class="s1">&#39;patata&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">]]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<ul class="simple">
+<li>L’exemple anterior mostra quatre casos de llistes, d’elements de tot tipus
+(incloent-hi l’anomenada <em>llista buida</em> que no conté cap element) i com podem
+assignar-li una variable.</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="topic">
+<p class="topic-title first">Accés als elements, indexació de les llistes</p>
+<ul>
+<li><p class="first">Per accedir als elements de les llistes, hem de tenir en compte
+quin índex tenen associat. Els índex s’assignen als elements
+d’una llista en funció de l’ordre que tenen en aquesta (començant
+des de 0 (primer element), comptant fins acabar-la). Tenint
+clar quin index correspon a cada element, podem invocar-los
+de la següent forma:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;patata&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1">#Primer element</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#Segon element</span>
+<span class="go">a</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1">#Tercer element</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#Últim element (en aquest cas el quart)</span>
+<span class="go">patata</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first">A més a més, també tenim la possiblitat d’invocar un segment d’una
+llista. Per fer-ho, indicarem l’index de l’element amb el que
+volem iniciar la seqüència i el de l’últim sumant-li u (col·locats
+entre dos punts ( <em>:</em> )).</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="s1">&#39;patata&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span><span class="p">[</span><span class="mi">1</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span>
+<span class="go">[&#39;a&#39;, 4]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1">#Retorna la llista sencera</span>
+<span class="go">[2, &#39;a&#39;, 4, &#39;patata&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">llista</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="c1">#Retorna una llista amb l&#39;element d&#39;índex 2</span>
+<span class="go">[4]</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<div class="topic">
+<p class="topic-title first">Iteració sobre llistes</p>
+<ul class="simple">
+<li>Per iterar en una llistar i recòrrer cadascun dels seus elements
+un per un, tenim dos estructures perfectament vàlides: <em>for</em> i
+<em>while</em>.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Pràctica 1 - Documentació</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="cap1.html"
+                        title="next chapter">Introducció</a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="cap1.html" title="Introducció"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="index.html" title="Pràctica 1 - Documentació"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, A. Anhari, M. Compte, D. Alamillo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>
