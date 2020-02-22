@@ -1,15 +1,16 @@
 
-----------------
+================
 Llistes a python
-----------------
+================
+|
 
 :Autors: Anass Anhari, Marcel Compte i Daniel Alamillo
-
-------------------	 
 	 
 |
 
-.. topic:: Definició
+Definició
+=========
+
 
 	   * Una llista és un conjunt ordenat de dades en que cadascun dels
 	     seus element està relacionat amb un índex, corresponent a la
@@ -24,8 +25,8 @@ Llistes a python
 
 |
 
-.. topic:: Creació d'una llista
-
+Creació d'una llista
+====================
 	   * Les llistes s'identifiquen amb els símbols *[* i *]* i els seus
 	     element van separats per comes ( *,* ). Així doncs, per crear-les
 	     necessitarem introduïr elements entre claudàtors separats per
@@ -46,7 +47,8 @@ Llistes a python
 
 |
 
-.. topic:: Accés als elements, indexació de les llistes
+Accés als elements, indexació de les llistes
+============================================
 
 	   * Per accedir als elements de les llistes, hem de tenir en compte
 	     quin índex tenen associat. Els índex s'assignen als elements
@@ -86,11 +88,12 @@ Llistes a python
 		  [4] 
 
 
-.. topic:: Iteració sobre llistes
-
+Iteració sobre llistes
+======================
 	   * Per iterar en una llistar i recòrrer cadascun dels seus elements
 	     un per un, tenim dos estructures perfectament vàlides: *for* i
 	     *while*. 
+
 
 	   
 		
