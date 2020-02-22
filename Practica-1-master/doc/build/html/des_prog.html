@@ -1,0 +1,267 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Project description &#8212; Practica 1 1.01 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module img" href="img.html" />
+    <link rel="prev" title="Llistes a python" href="llistes.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="img.html" title="Module img"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="llistes.html" title="Llistes a python"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="project-description">
+<h1>Project description<a class="headerlink" href="#project-description" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>The main objective of this application is, given a picture of a license plate
+(only, without the car or other elements), recognise its digits and represent
+them on the terminal.</p>
+<p>The next image shows an example of license plate which can be processed by the
+program:</p>
+<blockquote>
+<div><div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div></blockquote>
+<a class="reference internal image-reference" href="_images/m_1.jpeg"><img alt="Example of licence plate that can be processed by the program" class="align-center" src="_images/m_1.jpeg" style="width: 400px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<p>For accomplish the objective, the image have to be transformed and processed
+following the next steps:</p>
+<ol class="arabic simple">
+<li>Converting the image mode into ‘1’ (black and white).</li>
+<li>Triming the image leaving only the digits of the license plate (in only one
+image).</li>
+<li>Scaling the image, so that it has the same height (or the most similar) of
+the digit patterns (which are compared to the digits of the license plate,
+in order to know what digit represents).</li>
+<li>Spliting the image and get the digits (in separeted files).</li>
+<li>Eventually, comparing the digit with the patterns and decide which number
+is it.</li>
+</ol>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<a class="reference internal image-reference" href="_images/Proces_mat.png"><img alt="Transformation of the license plate" class="align-center" src="_images/Proces_mat.png" style="width: 1500px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="modules-of-the-project">
+<h2>Modules of the project<a class="headerlink" href="#modules-of-the-project" title="Permalink to this headline">¶</a></h2>
+<p>This project has 7 modules that work simultaneously and together in order to
+achive represent the license plate. This modules are:</p>
+<ul>
+<li><p class="first"><strong>img.py</strong>: It contains the primary operations of the project and do the
+firsts transformations to the images.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><strong>imgio.py</strong>: This module is responsible of the input/output operation of
+images. It reads images from the disk, saves them into the disk and also
+can show them on the screen.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><strong>transf.py</strong>: Its purpose base on the transformation of images. In
+particular, for scale them (change their resolution and
+modify their size) and for trim them (getting an image with the digits).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><strong>discret.py</strong>: It permits to convert an image in ‘RGB’ mode to ‘1’ mode
+(black and white).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><strong>split.py</strong>: This module is the responsible of split the license plate,
+leaving only the digits of it (in diferents images, one per digit).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><strong>match.py</strong>: It is the module in charge of decide which number represent the
+different images of the digits.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+<li><p class="first"><strong>img2char</strong>: It is the main module. Its function is join all the
+funcionalities of the previous modules in only one file.</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</li>
+</ul>
+<p>All this modules are related  one each other, sharing functions
+and parameters. The next image show how are the diferent files connected:</p>
+<a class="reference internal image-reference" href="_images/Esquema_moduls.png"><img alt="Image shows how are the diferent files connected" class="align-center" src="_images/Esquema_moduls.png" style="width: 1000px;" /></a>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+<div class="section" id="image-mode">
+<h2>Image mode<a class="headerlink" href="#image-mode" title="Permalink to this headline">¶</a></h2>
+<p>When we talk about pictures from a computer point of view, we are talking about
+matrices of pixels, which defines with numbers the image pixel per pixel. We can
+imagine a matrix of pixels as an ‘encoded image’.</p>
+<p>According to the image mode, the matrix of pixels has a different structure.
+For this reason and to understand most of the functions of the project,
+is essencial to know the diferences between the images modes  ‘RGB’, ‘L’ and
+‘1’ (used in this project).</p>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first"><strong>‘RGB’</strong>: The pictures of this type can represent all the colour
+palette, for this reason has the most complex matrix of pixels. The structure
+of the matrix is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># &#39;RGB&#39; image of size: (2 px. * 2 px.)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">RGB_Matrix</span> <span class="o">=</span> <span class="p">[[(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)],[(</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">),(</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">)]]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As we can see, every pixel in RGB is represented as tuple (r,g,b),
+every row as a list of tuples and the entire image as a list of rows.</p>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first"><strong>‘L’</strong>: The images of this mode can represent all the greyscale. We can
+convert an RGB image into an L using the luminance of every pixel (Luminance
+= 1/3 * (r+g+b)). A matrix in L mode is like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># &#39;L&#39; image of size: (2 px. * 2 px.)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">L_Matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">195</span><span class="p">,</span><span class="mi">85</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Every row of the picture is a list of values and the entire image a list of
+lists (the same happens at ‘1’ mode).</p>
+</div>
+</li>
+</ul>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<ul>
+<li><p class="first"><strong>‘1’</strong>: This type of pictures can only represent images in black and white.
+To convert an L image into a 1, we need to define a border value. If the pixel
+in L is above the border value it will transform automatically into a 255
+and if it is below, into a 0. A great form to decide the border value is with
+the Otsu’s Threesholding Method. The structure of the matrix at this mode is:</p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="c1"># &#39;1&#39; image of size: (2 px. * 2 px.)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">1</span><span class="n">_Matrix</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This example can show us that the pixels in ‘1’ mode can only have two
+values (255 (white) and 0 (black)).</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="llistes.html"
+                        title="previous chapter">Llistes a python</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="img.html"
+                        title="next chapter">Module <em>img</em></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="img.html" title="Module img"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="llistes.html" title="Llistes a python"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, A. Anhari, M. Compte, D. Alamillo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

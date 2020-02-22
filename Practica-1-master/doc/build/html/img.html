@@ -1,0 +1,408 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Module img &#8212; Practica 1 1.01 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module discret" href="discret.html" />
+    <link rel="prev" title="Project description" href="des_prog.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="discret.html" title="Module discret"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="des_prog.html" title="Project description"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-img"></span><div class="section" id="id1">
+<h1>Module <em>img</em><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>The module <em>img</em> contains the structural functions of the project (the basical
+elements of it), which are able to, for example, control the Image’s format,
+create new ones, encode a picture into a matrix…</p>
+<p>This is the list of all of it:</p>
+<dl class="function">
+<dt id="img.get_h">
+<code class="descclassname">img.</code><code class="descname">get_h</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#get_h"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.get_h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the image height</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>tuple</em>) – Image representation (Type, Matrix)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The height of the image</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get</span> <span class="n">h</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]]))</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get</span> <span class="n">h</span><span class="p">((</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]]))</span>
+<span class="go">3</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.get_w">
+<code class="descclassname">img.</code><code class="descname">get_w</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#get_w"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.get_w" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the image width</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>tuple</em>) – Image representation (Type, Matrix)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The witdh of the image</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">int</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">get_w</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]]))</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">get_w</span><span class="p">((</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]]))</span>
+<span class="go">5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.img">
+<code class="descclassname">img.</code><code class="descname">img</code><span class="sig-paren">(</span><em>matrix</em>, <em>model</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#img"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.img" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function has diferent utilities depending on the value of <em>model</em>
+argument. On one hand, if model = ‘RGB’,’L’ or ‘1’ (the diferent image
+modes / types), the function verify if the matrix estructure is valid
+for the selected mode, then returns the image representation 
+(Type, Matrix) of it. If not, the function returns a warning.</p>
+<p>On the other hand, if model = ‘DISCOVER’ the function tries to discover
+the mode of the image from matrix. Unless the matrix has some sintactic
+mistakes (in which case returns a warning), the function returns the 
+image representation (Type (discovered), Matrix).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>matrix</strong> (<em>list</em>) – Image matrix</li>
+<li><strong>mode</strong> (<em>str</em>) – The mode of the image or the parameter ‘DISCOVER’</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">Image representation (Type, Matrix)</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">([[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">128</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">191</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]],</span><span class="s1">&#39;DISCOVER&#39;</span><span class="p">)</span> 
+<span class="go">(&#39;L&#39;, [[255, 255, 0], [255, 128, 255], [191, 255, 255]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">img</span><span class="p">([[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]],</span><span class="s1">&#39;DISCOVER&#39;</span><span class="p">)</span>
+<span class="go">(&#39;1&#39;, [[255, 255, 0], [255, 0, 255], [0, 255, 255]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.is_null">
+<code class="descclassname">img.</code><code class="descname">is_null</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#is_null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.is_null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if an image (Type, Matrix) is null</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>tuple</em>) – Image representation (Type, Matrix)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True (if it is null) or False (if not)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">is_null</span><span class="p">((</span><span class="s1">&#39;NULL&#39;</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_null</span><span class="p">((</span><span class="s1">&#39;RGB&#39;</span><span class="p">,[(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">)]))</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.matrix">
+<code class="descclassname">img.</code><code class="descname">matrix</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#matrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.matrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the pixel matrix of the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>str</em>) – Image’s file name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The matrix of the image</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span><span class="p">(</span><span class="s1">&#39;blanc_bn.jpeg&#39;</span><span class="p">)</span>
+<span class="go">[[255, 255], [255, 255], [255, 255]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">matrix</span><span class="p">(</span><span class="s1">&#39;blanc_grey.jpeg&#39;</span><span class="p">)</span>
+<span class="go">[[255, 255, 255], [255, 255, 255], [255, 255, 255]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.mode">
+<code class="descclassname">img.</code><code class="descname">mode</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#mode"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Retuns the image mode</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>tuple</em>) – Image representation (Type, Matrix)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The image mode</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mode</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]])</span>
+<span class="go">&#39;1&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">mode</span><span class="p">((</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]]))</span>
+<span class="go">&#39;L&#39;</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.null">
+<code class="descclassname">img.</code><code class="descname">null</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#null"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.null" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an empty image: (‘NULL’, None)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The null image</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Tuple: (‘NULL’, None)</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">null</span><span class="p">()</span>
+<span class="go">(&#39;NULL&#39;, None)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.subimg">
+<code class="descclassname">img.</code><code class="descname">subimg</code><span class="sig-paren">(</span><em>img</em>, <em>ow</em>, <em>oh</em>, <em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#subimg"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.subimg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a sub-region of an image with size (w * h), starting at 
+pixel (ow,oh). Naturally, the sub-image must be fully contained in img.
+The parameter img must be the name of the picture you want to trim
+(the path or the file’s name (if the image is in the same directory of
+the module)). This funciton don’t return anything, only saves the 
+sub-region image as ‘subregion.jpeg’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>img</strong> (<em>str</em>) – Image’s name (including the format (.jpeg, .png…))</li>
+<li><strong>ow</strong> (<em>int</em><em> (</em><em>lower than img horizontal size</em><em>)</em>) – Horizontal position of the origin pixel</li>
+<li><strong>oh</strong> (<em>int</em><em> (</em><em>lower than img vertical size</em><em>)</em>) – Vertical position of the origin pixel</li>
+<li><strong>w</strong> (<em>int</em>) – Witdh of the subregion</li>
+<li><strong>h</strong> (<em>int</em>) – Height of the subregion</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">None (saves the trimmed image)</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.white_bn">
+<code class="descclassname">img.</code><code class="descname">white_bn</code><span class="sig-paren">(</span><em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#white_bn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.white_bn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an image in black and white (‘1’) with all white pixels and size w*h</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>w</strong> (<em>int</em>) – The width of the new image</li>
+<li><strong>h</strong> (<em>int</em>) – The height of the new image</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An all white new image (w * h) in ‘1’ mode</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple, (‘1’, Matrix)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">white</span> <span class="n">bn</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">(&#39;1&#39;, [[255, 255, 255], [255, 255, 255], [255, 255, 255]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">white_bn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">(&#39;1&#39;, [[255, 255], [255, 255], [255, 255]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.white_grey">
+<code class="descclassname">img.</code><code class="descname">white_grey</code><span class="sig-paren">(</span><em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#white_grey"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.white_grey" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an image in grey format (‘L’) with all white pixels and size w * h</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>w</strong> (<em>int</em>) – The width of the new image</li>
+<li><strong>h</strong> (<em>int</em>) – The height of the new image</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An all white new image (w * h) in ‘L’ mode</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple, (‘L’, Matrix)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">white</span> <span class="n">grey</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">(&#39;L&#39;, [[255, 255, 255], [255, 255, 255], [255, 255, 255]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">white</span> <span class="n">grey</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="go">(&#39;L&#39;, [[255, 255, 255, 255, 255], [255, 255, 255, 255, 255]]) </span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="img.white_rgb">
+<code class="descclassname">img.</code><code class="descname">white_rgb</code><span class="sig-paren">(</span><em>w</em>, <em>h</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img.html#white_rgb"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img.white_rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an image in RGB format with all white pixel and size w * h</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>w</strong> (<em>int</em>) – The width of the new image</li>
+<li><strong>h</strong> (<em>int</em>) – The height of the new image</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">An all white new image (w * h) in ‘RGB’ mode</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple, (‘RGB’, Matrix)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">white</span> <span class="n">rgb</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+<span class="go">(&#39;RGB&#39;, [[(255, 255, 255), (255, 255, 255), (255, 255, 255)], </span>
+<span class="go">[(255, 255, 255), (255, 255, 255), (255, 255, 255)], </span>
+<span class="go">[(255, 255, 255), (255, 255, 255), (255, 255,    </span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="des_prog.html"
+                        title="previous chapter">Project description</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="discret.html"
+                        title="next chapter">Module <em>discret</em></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="discret.html" title="Module discret"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="des_prog.html" title="Project description"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, A. Anhari, M. Compte, D. Alamillo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>
