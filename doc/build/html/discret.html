@@ -23,7 +23,6 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Introducció" href="cap1.html" />
     <link rel="prev" title="Module img" href="img.html" /> 
   </head>
   <body>
@@ -36,9 +35,6 @@
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="cap1.html" title="Introducció"
-             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="img.html" title="Module img"
              accesskey="P">previous</a> |</li>
@@ -58,16 +54,60 @@ like converting the fromat of the image into another, for example, convert an im
 to a Greyscale format.</p>
 <p>This is the list of all of it:</p>
 <dl class="function">
-<dt id="discret.luminance_img">
-<code class="descclassname">discret.</code><code class="descname">luminance_img</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/discret.html#luminance_img"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#discret.luminance_img" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transforms a RGB image into a L image using luminance</p>
+<dt id="discret.histogram">
+<code class="descclassname">discret.</code><code class="descname">histogram</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/discret.html#histogram"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#discret.histogram" title="Permalink to this definition">¶</a></dt>
+<dd><p>Histogram of grey values of the L image i</p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>tuple</em><em>  (</em><em>'RGB'</em><em>, </em><em>Matrix</em><em>)</em>) – Image</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The an L image format from an RGB image using <em>rgb_to_lum</em></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of the 256 values (0 upto 250) of the grey scale values of the L format image</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">histogram</span><span class="p">((</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]]))</span>
+<span class="go">[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">histogram</span><span class="p">((</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="p">[[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">,</span> <span class="mi">250</span><span class="p">]]))</span>
+<span class="go">[3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, </span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,</span>
+<span class="go"> 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="discret.luminance_img">
+<code class="descclassname">discret.</code><code class="descname">luminance_img</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/discret.html#luminance_img"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#discret.luminance_img" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transforms a RGB image into a L image using <em>rgb_to_lum(i)</em> for each pixel tuple in RGB</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>tuple</em><em>  (</em><em>'RGB'</em><em>, </em><em>Matrix</em><em>)</em>) – Image</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The an L image format from an RGB image</td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple (‘L’, Matrix)</td>
 </tr>
@@ -85,20 +125,36 @@ to a Greyscale format.</p>
 <dl class="function">
 <dt id="discret.rgb_to_bn">
 <code class="descclassname">discret.</code><code class="descname">rgb_to_bn</code><span class="sig-paren">(</span><em>i</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/discret.html#rgb_to_bn"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#discret.rgb_to_bn" title="Permalink to this definition">¶</a></dt>
-<dd><p>Transforms a RGB image into a 1 image using luminance and histogram</p>
+<dd><p>Transforms a RGB image into a 1 image format using luminance and histogram, with the image
+converted into a grey scale format (L).</p>
+<p>The function goes through each pixel of the 
+L image and compares it with a certain value to know if it is part from the Backgound or Foreground.</p>
+<p>In this case we’ve decieded that the medium value to know if a L pixel
+is black or white is the 128, if is greater or equally to 128 is a white pixel and is a black pixel if not.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>We’ve had troubles in the making of the project because of the Otsu Thresholding Method Algorithm,
+it is supposed that using this algorithm should give us the medium value to know if the pixel
+it is a part from the Background (black) or Foreground (white).</p>
+<p class="last">But we’be translated the code that it is written natively in java to python and it didn’t work, 
+even though that the code is almost exactly the same.</p>
+</div>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>tuple</em><em>  (</em><em>'RGB'</em><em>, </em><em>Matrix</em><em>)</em>) – Image</td>
 </tr>
-<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The an 1 image format from an RGB image using <em>rgb_to_lum</em></td>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The an 1 image format from an RGB image using <em>luminance_img(i)</em></td>
 </tr>
 <tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple (‘1’, Matrix)</td>
 </tr>
 </tbody>
 </table>
 <div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_bn</span><span class="p">((</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">[[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)],[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
+<span class="go">(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255), (255, 255, 255)]]))</span>
+<span class="go">(&#39;1&#39;, [[255, 255, 255], [255, 255, 255], [255, 255, 255]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rgb_to_bn</span><span class="p">((</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">[[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)],[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span>
 <span class="go">(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255), (255, 255, 255)]]))</span>
 <span class="go">(&#39;1&#39;, [[255, 255, 255], [255, 255, 255], [255, 255, 255]])</span>
 </pre></div>
@@ -108,7 +164,8 @@ to a Greyscale format.</p>
 <dl class="function">
 <dt id="discret.rgb_to_lum">
 <code class="descclassname">discret.</code><code class="descname">rgb_to_lum</code><span class="sig-paren">(</span><em>pixel</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/discret.html#rgb_to_lum"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#discret.rgb_to_lum" title="Permalink to this definition">¶</a></dt>
-<dd><p>Returns the luminance level of a RGB pixel</p>
+<dd><p>Returns the luminance level of a RGB (R, G, B) pixel using a simple formula:</p>
+<p>The luminance of a pixel in RGB is <strong>(R + G + B) / 3</strong></p>
 <table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -140,9 +197,6 @@ to a Greyscale format.</p>
   <h4>Previous topic</h4>
   <p class="topless"><a href="img.html"
                         title="previous chapter">Module <em>img</em></a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="cap1.html"
-                        title="next chapter">Introducció</a></p>
 <div id="searchbox" style="display: none" role="search">
   <h3>Quick search</h3>
     <form class="search" action="search.html" method="get">
@@ -166,9 +220,6 @@ to a Greyscale format.</p>
         <li class="right" >
           <a href="py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
-        <li class="right" >
-          <a href="cap1.html" title="Introducció"
-             >next</a> |</li>
         <li class="right" >
           <a href="img.html" title="Module img"
              >previous</a> |</li>

@@ -21,7 +21,9 @@ def rgb_to_lum(pixel):
 	
 	"""
 
-        Returns the luminance level of a RGB pixel
+        Returns the luminance level of a RGB (R, G, B) pixel using a simple formula:\n
+
+        The luminance of a pixel in RGB is **(R + G + B) / 3**
 
         :param pixel: Pixel
         :type pixel: tuple
@@ -53,11 +55,11 @@ def luminance_img(i):
 
 	"""
 
-        Transforms a RGB image into a L image using luminance
+        Transforms a RGB image into a L image using *rgb_to_lum(i)* for each pixel tuple in RGB
 
         :param i: Image
         :type i: tuple  ('RGB', Matrix)
-        :returns: The an L image format from an RGB image using *rgb_to_lum*
+        :returns: The an L image format from an RGB image
         :rtype: tuple ('L', Matrix)
 
 	>>> luminance_img('RGB', [[(255, 255, 255), (255, 255, 255), (255, 255, 255)], [(255, 255, 255),
@@ -83,6 +85,40 @@ def luminance_img(i):
 
 
 def histogram(i):
+
+	"""
+	Histogram of grey values of the L image i
+
+        :param i: Image
+        :type i: tuple  ('RGB', Matrix)
+        :returns: A list of the 256 values (0 upto 250) of the grey scale values of the L format image
+        :rtype: list
+
+	>>> histogram(('L', [[255, 255, 255, 255], [255, 255, 255, 255]]))
+	[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8]
+	>>> histogram(('L', [[255, 255, 0, 0], [0, 250, 250, 250]]))
+	[3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+	 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, 2]
+	"""
 
 	dic = {}
 	img = luminance_img(i)
@@ -140,13 +176,28 @@ def rgb_to_bn(i):
 
 	"""
 
-        Transforms a RGB image into a 1 image using luminance and histogram
+        Transforms a RGB image into a 1 image format using luminance and histogram, with the image
+        converted into a grey scale format (L).\n
+        The function goes through each pixel of the 
+        L image and compares it with a certain value to know if it is part from the Backgound or Foreground.\n
+        In this case we've decieded that the medium value to know if a L pixel
+        is black or white is the 128, if is greater or equally to 128 is a white pixel and is a black pixel if not.
+
+        .. note::
+        	We've had troubles in the making of the project because of the Otsu Thresholding Method Algorithm,
+        	it is supposed that using this algorithm should give us the medium value to know if the pixel
+        	it is a part from the Background (black) or Foreground (white).\n
+        	But we’be translated the code that it is written natively in java to python and it didn't work, 
+        	even though that the code is almost exactly the same.
 
         :param i: Image 
         :type i: tuple  ('RGB', Matrix)
-        :returns: The an 1 image format from an RGB image using *rgb_to_lum*
+        :returns: The an 1 image format from an RGB image using *luminance_img(i)*
         :rtype: tuple ('1', Matrix)
 
+	>>> rgb_to_bn(('RGB', [[(255, 255, 255), (255, 255, 255), (255, 255, 255)],[(255, 255, 255),
+	(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255), (255, 255, 255)]]))
+	('1', [[255, 255, 255], [255, 255, 255], [255, 255, 255]])
 	>>> rgb_to_bn(('RGB', [[(255, 255, 255), (255, 255, 255), (255, 255, 255)],[(255, 255, 255),
 	(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255), (255, 255, 255)]]))
 	('1', [[255, 255, 255], [255, 255, 255], [255, 255, 255]])

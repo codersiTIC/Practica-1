@@ -14,7 +14,6 @@ Pràctica 1 - Documentació
    :maxdepth: 2
 
    llistes
+   des_prog
    img
    discret
-   cap1
-   prueba
