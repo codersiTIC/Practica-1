@@ -1,0 +1,307 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>discret &#8212; Practica 1 1.01 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Practica 1 1.01 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for discret</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- encoding: utf-8 -*-</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Module *discret*</span>
+<span class="sd">================</span>
+
+<span class="sd">The module *discret* basically contains the functions for the color image proccessing, </span>
+<span class="sd">like converting the fromat of the image into another, for example, convert an image in RGB </span>
+<span class="sd">to a Greyscale format.</span>
+
+
+<span class="sd">This is the list of all of it:</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">img</span> <span class="k">import</span> <span class="o">*</span>
+<span class="c1">#from imgio import *</span>
+
+
+<div class="viewcode-block" id="rgb_to_lum"><a class="viewcode-back" href="../discret.html#discret.rgb_to_lum">[docs]</a><span class="k">def</span> <span class="nf">rgb_to_lum</span><span class="p">(</span><span class="n">pixel</span><span class="p">):</span>
+	
+	<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Returns the luminance level of a RGB pixel</span>
+
+<span class="sd">        :param pixel: Pixel</span>
+<span class="sd">        :type pixel: tuple</span>
+<span class="sd">        :returns: The luminance of the RGB pixel</span>
+<span class="sd">        :rtype: int</span>
+
+<span class="sd">	&gt;&gt;&gt; rgb_to_lum((255,255,255))</span>
+<span class="sd">	255</span>
+<span class="sd">	&gt;&gt;&gt; rgb_to_lum((255,0,0))</span>
+<span class="sd">	85</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">l</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span> <span class="o">!=</span> <span class="mi">3</span><span class="p">:</span>
+		<span class="k">return</span> <span class="s1">&#39;Incorrect pixel&#39;</span>
+
+	<span class="k">else</span><span class="p">:</span>
+		<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">pixel</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">element</span> <span class="ow">not</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+				<span class="k">return</span> <span class="s1">&#39;Incorrect pixel&#39;</span>
+
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">l</span> <span class="o">+=</span> <span class="n">element</span>
+
+	<span class="k">return</span> <span class="n">l</span><span class="o">/</span><span class="mi">3</span></div>
+
+<div class="viewcode-block" id="luminance_img"><a class="viewcode-back" href="../discret.html#discret.luminance_img">[docs]</a><span class="k">def</span> <span class="nf">luminance_img</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Transforms a RGB image into a L image using luminance</span>
+
+<span class="sd">        :param i: Image</span>
+<span class="sd">        :type i: tuple  (&#39;RGB&#39;, Matrix)</span>
+<span class="sd">        :returns: The an L image format from an RGB image using *rgb_to_lum*</span>
+<span class="sd">        :rtype: tuple (&#39;L&#39;, Matrix)</span>
+
+<span class="sd">	&gt;&gt;&gt; luminance_img(&#39;RGB&#39;, [[(255, 255, 255), (255, 255, 255), (255, 255, 255)], [(255, 255, 255),</span>
+<span class="sd">	(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255), (255, 255, 255)]])</span>
+<span class="sd">	(&#39;L&#39;, [[255, 255, 255], [255, 255, 255], [255, 255, 255]])</span>
+<span class="sd">	&gt;&gt;&gt; luminance_img(&#39;RGB&#39;, [[(255, 0, 255), (255, 255, 255)], [(0, 0, 255), (255, 0, 255)]])</span>
+<span class="sd">	(&#39;L&#39;, [[170, 255], [85, 170])</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">fila</span> <span class="ow">in</span> <span class="n">matrix</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+		<span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">fila</span><span class="p">:</span>
+			<span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">rgb_to_lum</span><span class="p">(</span><span class="n">pixel</span><span class="p">))</span>
+
+			<span class="k">if</span> <span class="n">rgb_to_lum</span><span class="p">(</span><span class="n">pixel</span><span class="p">)</span><span class="o">==</span><span class="s1">&#39;Incorrect pixel&#39;</span><span class="p">:</span>
+				<span class="k">return</span> <span class="s1">&#39;Incorrect image&#39;</span>
+
+		<span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="n">l</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">histogram</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+
+	<span class="n">dic</span> <span class="o">=</span> <span class="p">{}</span>
+	<span class="n">img</span> <span class="o">=</span> <span class="n">luminance_img</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">img</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+		<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">element</span><span class="p">:</span>
+			<span class="n">dic</span><span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="o">=</span> <span class="n">dic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">value</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span>
+
+	<span class="k">for</span> <span class="n">grey</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+		<span class="n">dic</span><span class="p">[</span><span class="n">grey</span><span class="p">]</span> <span class="o">=</span> <span class="n">dic</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">grey</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="n">dic</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+
+
+<span class="k">def</span> <span class="nf">get_threshold</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+
+	<span class="n">histData</span> <span class="o">=</span> <span class="n">histogram</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+	<span class="n">srcData</span> <span class="o">=</span> <span class="n">luminance_img</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+
+	<span class="n">total</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">srcData</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1"># len(srcData[1])*len(srcData[1][0]) TOTS els pixels (NO)</span>
+
+	<span class="n">suma</span> <span class="o">=</span> <span class="mf">0.0</span>
+	<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+		<span class="n">suma</span> <span class="o">+=</span> <span class="n">t</span> <span class="o">*</span> <span class="n">histData</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+
+	<span class="n">sumB</span> <span class="o">=</span> <span class="mf">0.0</span>
+	<span class="n">wB</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">wF</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="n">varMax</span> <span class="o">=</span> <span class="mf">0.0</span>
+	<span class="n">threshold</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">256</span><span class="p">):</span>
+		<span class="n">wB</span> <span class="o">+=</span> <span class="n">histData</span><span class="p">[</span><span class="n">t</span><span class="p">]</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">wB</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="k">continue</span>
+
+		<span class="n">wF</span> <span class="o">=</span> <span class="n">total</span> <span class="o">-</span> <span class="n">wB</span>
+		<span class="k">if</span> <span class="p">(</span><span class="n">wF</span> <span class="o">==</span> <span class="mi">0</span><span class="p">):</span> <span class="k">break</span>
+
+		<span class="n">sumB</span> <span class="o">+=</span> <span class="nb">float</span><span class="p">(</span><span class="n">t</span> <span class="o">*</span> <span class="n">histData</span><span class="p">[</span><span class="n">t</span><span class="p">])</span>
+
+		<span class="n">mB</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">sumB</span><span class="p">)</span><span class="o">/</span><span class="n">wB</span>
+		<span class="n">mF</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">suma</span> <span class="o">-</span> <span class="n">sumB</span><span class="p">)</span> <span class="o">/</span> <span class="n">wF</span>
+
+		<span class="n">varBetween</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">wB</span><span class="p">)</span> <span class="o">*</span> <span class="nb">float</span><span class="p">(</span><span class="n">wF</span><span class="p">)</span> <span class="o">*</span> <span class="p">((</span><span class="n">mB</span> <span class="o">-</span> <span class="n">mF</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+		<span class="k">if</span> <span class="p">(</span><span class="n">varBetween</span> <span class="o">&gt;</span> <span class="n">varMax</span><span class="p">):</span>
+			<span class="n">varMax</span> <span class="o">=</span> <span class="n">varBetween</span>
+			<span class="n">threshold</span> <span class="o">=</span> <span class="n">t</span>
+			<span class="k">return</span> <span class="n">threshold</span>
+
+
+
+<div class="viewcode-block" id="rgb_to_bn"><a class="viewcode-back" href="../discret.html#discret.rgb_to_bn">[docs]</a><span class="k">def</span> <span class="nf">rgb_to_bn</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        Transforms a RGB image into a 1 image using luminance and histogram</span>
+
+<span class="sd">        :param i: Image </span>
+<span class="sd">        :type i: tuple  (&#39;RGB&#39;, Matrix)</span>
+<span class="sd">        :returns: The an 1 image format from an RGB image using *rgb_to_lum*</span>
+<span class="sd">        :rtype: tuple (&#39;1&#39;, Matrix)</span>
+
+<span class="sd">	&gt;&gt;&gt; rgb_to_bn((&#39;RGB&#39;, [[(255, 255, 255), (255, 255, 255), (255, 255, 255)],[(255, 255, 255),</span>
+<span class="sd">	(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255), (255, 255, 255)]]))</span>
+<span class="sd">	(&#39;1&#39;, [[255, 255, 255], [255, 255, 255], [255, 255, 255]])</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+
+
+	<span class="c1">#threshold = get_threshold(i)</span>
+	<span class="n">image_RGB</span> <span class="o">=</span> <span class="n">luminance_img</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+	<span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">image_RGB</span><span class="p">[</span><span class="mi">1</span><span class="p">]:</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">element</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">pixel</span> <span class="o">&gt;=</span> <span class="mi">128</span><span class="p">:</span> <span class="c1">#thresehold:</span>
+				<span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+		<span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+
+	<span class="n">im_bn</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+	<span class="c1">#matrix2img(s,&#39;rgb_to_bn.jpeg&#39;, &#39;1&#39;)</span>
+	<span class="k">return</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span></div>
+
+<span class="k">def</span> <span class="nf">L_to_bn</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+
+	<span class="c1">#threshold = get_threshold(i)</span>
+	<span class="k">try</span><span class="p">:</span>
+		<span class="n">image_L</span> <span class="o">=</span> <span class="p">(</span><span class="n">matrix</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+
+	<span class="k">except</span> <span class="ne">AttributeError</span><span class="p">:</span>
+		<span class="n">image_L</span> <span class="o">=</span> <span class="n">i</span>
+
+	<span class="n">s</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">image_L</span><span class="p">:</span>
+		<span class="n">f</span> <span class="o">=</span> <span class="p">[]</span>
+		<span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">element</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">pixel</span> <span class="o">&gt;=</span> <span class="mi">128</span><span class="p">:</span> <span class="c1">#thresehold:</span>
+				<span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">255</span><span class="p">)</span>
+			<span class="k">else</span><span class="p">:</span>
+				<span class="n">f</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+		<span class="n">s</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+
+	<span class="n">im_bn</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+	<span class="c1">#matrix2img(s,&#39;L_to_bn.jpeg&#39;, &#39;1&#39;)</span>
+
+	<span class="k">return</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+
+	<span class="c1">#print histogram((&#39;L&#39;,[[255,255,255,255],[255,255,255,255]]))</span>
+	<span class="nb">print</span> <span class="n">rgb_to_bn</span><span class="p">(</span><span class="s1">&#39;m_5.jpeg&#39;</span><span class="p">)</span>
+	<span class="c1">#print get_threshold (&#39;m5.jpeg&#39;)</span>
+	<span class="c1">#print histogram(&#39;m1.jpeg&#39;)</span>
+	<span class="c1">#show(&#39;m1bn.jpeg&#39;)</span>
+	<span class="c1">#print luminance_img(&#39;rainbow.jpg&#39;)</span>
+	<span class="c1">#print histogram(luminance_img((matrix(&#39;m1.jpeg&#39;))))</span>
+	<span class="c1">#print rgb_to_lum((0,125,255))</span>
+	<span class="c1">#print luminance_img((&#39;RGB&#39;, [[(255, 125, 0), (255, 255, 255)], [(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255)]]))</span>
+	<span class="c1">#print histogram((&#39;RGB&#39;, [[(255, 125, 0), (255, 255, 255)], [(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255)]]))</span>
+	<span class="c1">#print histogram((&#39;L&#39;, [[255, 255, 255, 255], [255, 255, 255, 255]]))</span>
+	<span class="c1">#show(rgb_to_bn(&#39;rainbow.jpg&#39;))</span>
+	<span class="c1">#imatge = rgb_to_bn(&#39;blancRGB.jpeg&#39;)</span>
+	<span class="c1">#imatge.save(&#39;wrgbbn.jpeg&#39;)</span>
+	<span class="c1">#save(img, &#39;pusssi.jpeg&#39;)</span>
+	<span class="c1">#show(&#39;rainbow.jpg&#39;)</span>
+
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Practica 1 1.01 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, A. Anhari, M. Compte, D. Alamillo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

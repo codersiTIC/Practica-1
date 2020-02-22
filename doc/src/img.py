@@ -3,7 +3,7 @@
 Module *img*
 ============
 
-The module *img* contain the structural functions of the project (the simpliest
+The module *img* contains the structural functions of the project (the basical
 elements of it), which are able to, for example, control the Image's format,
 create new ones, encode a picture into a matrix...
 
@@ -20,13 +20,13 @@ def null():
         Returns an empty image: ('NULL', None)
 
         :returns: The null image
-        :rtype: Tuple: ('NULL', None)
+       	:rtype: Tuple: ('NULL', None)
         
 
 	>>> null()
 	('NULL', None)
 
-      	"""
+    """
 
 	return('NULL',None)
 
@@ -43,8 +43,8 @@ def is_null(img):
 
 	>>> is_null(('NULL',None))
 	True
-        >>> is_null(('RGB',[(255,255,255),(255,255,255)]
-        False
+    >>> is_null(('RGB',[(255,255,255),(255,255,255)]
+    False
 	"""
 
 	if img[0] == 'NULL' and img[1] == None:
@@ -193,7 +193,9 @@ def img(matrix, model):
         
 
         :param matrix: Image matrix
+        :type matrix: list
         :param mode: The mode of the image or the parameter 'DISCOVER'
+        :type mode: str
         :returns: Image representation (Type, Matrix)
         :rtype: tuple
 

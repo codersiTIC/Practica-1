@@ -14,5 +14,7 @@ Pràctica 1 - Documentació
    :maxdepth: 2
 
    llistes
+   img
+   discret
    cap1
    prueba
