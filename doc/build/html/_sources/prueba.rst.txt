@@ -7,7 +7,7 @@ Documentació de codi font
 Documentació de funcions
 ========================
 
-Podem fer-ho aixÃ­:
+Podem fer-ho així:
 
 .. function:: suma2(a, b)
 
@@ -26,14 +26,14 @@ lloc del text usant una construcció com aquesta :py: func:'suma2'.
 D'aquesta manera es facilita notablement a l'usuari la consulta de la
 documentació, especialment si ho fa on-line.
 
-De forma automÃ tica la funció s'afegeix a l'Ã­ndex.
+De forma automàtica la funció s'afegeix a l'índex.
 
 
 
 Documentació de mòduls
 ======================
 
-TambÃ© tenim facilitats per documentar mòduls. En aquest cas l'estratègia Ã©s:
+També tenim facilitats per documentar mòduls. En aquest cas l'estratègia és:
 
 
 Mòdul  Sumador
@@ -44,7 +44,7 @@ Mòdul  Sumador
 
 .. moduleauthor:: Sebas Vila
 
-Aquest mòdul contÃ© una llista extensa de funcions que permeten fer sumes
+Aquest mòdul conté una llista extensa de funcions que permeten fer sumes
 amb diverses possibilitats mes o menys recargolades.
 
 .. function:: suml(l)

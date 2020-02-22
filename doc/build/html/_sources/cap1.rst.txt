@@ -2,4 +2,4 @@
 Introducció
 ===========
 
-Hola aixó es una proba nomes per probar la proba probistica
+Hola això és una proba només per probar la proba probistica
