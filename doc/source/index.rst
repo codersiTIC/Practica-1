@@ -17,3 +17,5 @@ Pràctica 1 - Documentació
    des_prog
    img
    discret
+   split
+   img2char

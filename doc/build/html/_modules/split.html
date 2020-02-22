@@ -1,0 +1,218 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>split &#8212; Practica 1 1.01 documentation</title>
+    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Practica 1 1.01 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Module code</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>Source code for split</h1><div class="highlight"><pre>
+<span></span><span class="c1"># -*- encoding: utf-8 -*-</span>
+<span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">Module *split*</span>
+<span class="sd">================</span>
+
+<span class="sd">The module *split* basically contains the functions for the color image proccessing, </span>
+<span class="sd">like converting the fromat of the image into another, for example, convert an image in RGB </span>
+<span class="sd">to a Greyscale format.</span>
+
+
+<span class="sd">This is the list of all of it:</span>
+
+<span class="sd">&#39;&#39;&#39;</span>
+
+<span class="kn">from</span> <span class="nn">transf</span> <span class="kn">import</span> <span class="o">*</span>
+
+<div class="viewcode-block" id="split_digits"><a class="viewcode-back" href="../split.html#split.split_digits">[docs]</a><span class="k">def</span> <span class="nf">split_digits</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+
+	<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">	This feature will receive a cropped black and white img image</span>
+<span class="sd">	vertically and returns a tuple (D, R) where D is an image</span>
+<span class="sd">	with the leftmost digit and R is the rest of the image.\n</span>
+<span class="sd">	The image corresponding to the extracted digit D is conveniently returned</span>
+<span class="sd">	cut in the horizontal direction. The rest R becomes a null() image</span>
+<span class="sd">	when all digits have been extracted.</span>
+
+<span class="sd">        :param img: Image file name</span>
+<span class="sd">        :type img: file</span>
+<span class="sd">        :returns: A tuple (D, R)</span>
+<span class="sd">        :rtype: tuple</span>
+
+<span class="sd">	|</span>
+
+<span class="sd">	In the following examples whe have the :file:`split_test_1.jpeg` that is the image at the left</span>
+<span class="sd">	and :file:`split_test_2.jpeg` at the rigth.</span>
+
+<span class="sd">	.. image:: split_test.jpeg</span>
+<span class="sd">	   :alt: Example of licence plate that can be processed by the program</span>
+<span class="sd">	   :width: 500</span>
+<span class="sd">	</span>
+<span class="sd">	|</span>
+
+<span class="sd">	&gt;&gt;&gt; split_digits(&#39;split_test_1.jpeg&#39;)</span>
+<span class="sd">	([[0], [0], [0]], [[255], [255], [255]])</span>
+<span class="sd">	&gt;&gt;&gt; split_digits(&#39;split_test_2.jpeg&#39;)</span>
+<span class="sd">	([[0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], [[255], [255], [255], [255], [255]])</span>
+<span class="sd">	</span>
+<span class="sd">	|</span>
+
+<span class="sd">	&quot;&quot;&quot;</span>
+
+	<span class="k">if</span> <span class="n">mode</span><span class="p">(</span><span class="n">img</span><span class="p">)</span> <span class="o">==</span> <span class="s1">&#39;RGB&#39;</span><span class="p">:</span>
+		<span class="n">img</span> <span class="o">=</span> <span class="n">TransMatrix</span><span class="p">(</span><span class="n">trim</span><span class="p">(</span><span class="n">img</span><span class="p">))</span>
+
+
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">img</span> <span class="o">=</span> <span class="n">L_to_bn</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+		<span class="n">img</span> <span class="o">=</span> <span class="n">TransMatrix</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+
+	<span class="n">D</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">R</span> <span class="o">=</span> <span class="p">[]</span>
+	<span class="n">index</span> <span class="o">=</span> <span class="mi">0</span>
+
+	<span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">img</span><span class="p">:</span>
+		<span class="n">c</span> <span class="o">=</span> <span class="mi">0</span>
+		<span class="k">for</span> <span class="n">pixel</span> <span class="ow">in</span> <span class="n">col</span><span class="p">:</span>
+			<span class="k">if</span> <span class="n">pixel</span> <span class="o">==</span> <span class="mi">255</span><span class="p">:</span>
+				<span class="n">c</span> <span class="o">+=</span> <span class="mi">1</span>
+
+		<span class="k">if</span> <span class="n">c</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">col</span><span class="p">):</span>
+			<span class="n">D</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
+
+		<span class="k">else</span><span class="p">:</span>
+			<span class="k">break</span>
+
+		<span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span>
+
+	<span class="n">R</span> <span class="o">=</span> <span class="n">img</span><span class="p">[</span><span class="n">index</span><span class="p">:]</span>
+	<span class="k">if</span> <span class="n">R</span> <span class="o">==</span> <span class="p">[]:</span>
+		<span class="n">R</span> <span class="o">=</span> <span class="n">null</span><span class="p">()</span> <span class="c1"># Segons el que diu el pdf</span>
+
+	<span class="k">else</span><span class="p">:</span>
+		<span class="n">R</span> <span class="o">=</span> <span class="n">whiteElim</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+		<span class="n">R</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>
+		<span class="n">R</span> <span class="o">=</span> <span class="n">TransMatrix</span><span class="p">(</span><span class="n">R</span><span class="p">)</span>
+		<span class="n">matrix2img</span><span class="p">(</span><span class="n">R</span><span class="p">,</span><span class="s1">&#39;R.jpeg&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+	<span class="n">D</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">D</span><span class="p">)</span>
+	<span class="n">D</span> <span class="o">=</span> <span class="n">TransMatrix</span><span class="p">(</span><span class="n">D</span><span class="p">)</span>
+	<span class="n">matrix2img</span><span class="p">(</span><span class="n">D</span><span class="p">,</span><span class="s1">&#39;D.jpeg&#39;</span><span class="p">,</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+	<span class="k">return</span> <span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">get_digits</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+
+	<span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="k">for</span> <span class="n">lletra</span> <span class="ow">in</span> <span class="n">img</span><span class="p">:</span>
+		<span class="k">if</span> <span class="n">lletra</span> <span class="o">==</span> <span class="s1">&#39;.&#39;</span><span class="p">:</span>
+			<span class="k">break</span>
+		<span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>
+
+	<span class="nb">tuple</span> <span class="o">=</span> <span class="n">split_digits</span><span class="p">(</span><span class="n">img</span><span class="p">)</span>
+	<span class="n">first_digit</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+	<span class="n">next_digit</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+	<span class="n">matrix2img</span><span class="p">(</span><span class="n">first_digit</span><span class="p">,</span> <span class="s1">&#39;D1.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+	<span class="n">matrix2img</span><span class="p">(</span><span class="n">next_digit</span><span class="p">,</span> <span class="s1">&#39;R1.jpeg&#39;</span><span class="p">,</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+	<span class="n">i</span> <span class="o">=</span> <span class="mi">1</span>
+	<span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+		<span class="nb">tuple</span> <span class="o">=</span> <span class="n">split_digits</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.jpeg&#39;</span><span class="p">)</span>
+		<span class="n">matrix2img</span><span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.jpeg&#39;</span><span class="p">),</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+		<span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.jpeg&#39;</span><span class="p">)</span>
+		<span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+		<span class="k">if</span> <span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">null</span><span class="p">():</span>
+			<span class="k">return</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="c1"># per saber quans digits</span>
+			<span class="k">break</span>
+
+		<span class="n">matrix2img</span><span class="p">(</span><span class="nb">tuple</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">(</span><span class="s1">&#39;R&#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="o">+</span><span class="s1">&#39;.jpeg&#39;</span><span class="p">),</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+
+	<span class="c1"># matrix2img(n[0], &#39;hola&#39;+str(i)+&#39;.jpeg&#39;)</span>
+	<span class="c1">#split_digit_L = split_digit_rgb == -&gt; (D,R)</span>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+	<span class="n">get_digits</span><span class="p">(</span><span class="s1">&#39;m1.jpeg&#39;</span><span class="p">)</span>
+	<span class="c1">#split_digits(&#39;m3.jpeg&#39;)</span>
+	<span class="c1">#split_digit_rgb(&#39;R.jpeg&#39;)</span>
+	<span class="c1">#print split_digit_L(&#39;R2.jpeg&#39;)</span>
+	<span class="c1">#get_digits(&#39;m1.jpeg&#39;)</span>
+	<span class="c1">#L_to_bn (&#39;R.jpeg&#39;)</span>
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="../py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">Practica 1 1.01 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="index.html" >Module code</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, A. Anhari, M. Compte, D. Alamillo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

@@ -61,7 +61,7 @@
 <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span>
 <span class="kn">import</span> <span class="nn">img</span><span class="o">,</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">sys</span>
 
-<div class="viewcode-block" id="null"><a class="viewcode-back" href="../img.html#img.null">[docs]</a><span class="k">def</span> <span class="nf">null</span><span class="p">():</span>
+<div class="viewcode-block" id="null"><a class="viewcode-back" href="../img2char.html#img.null">[docs]</a><span class="k">def</span> <span class="nf">null</span><span class="p">():</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Returns an empty image: (&#39;NULL&#39;, None)</span>
@@ -78,7 +78,7 @@
 	<span class="k">return</span><span class="p">(</span><span class="s1">&#39;NULL&#39;</span><span class="p">,</span><span class="kc">None</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="is_null"><a class="viewcode-back" href="../img.html#img.is_null">[docs]</a><span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+<div class="viewcode-block" id="is_null"><a class="viewcode-back" href="../img2char.html#img.is_null">[docs]</a><span class="k">def</span> <span class="nf">is_null</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Checks if an image (Type, Matrix) is null</span>
 
@@ -101,7 +101,7 @@
 		<span class="k">return</span> <span class="kc">False</span></div>
 
 
-<div class="viewcode-block" id="white_rgb"><a class="viewcode-back" href="../img.html#img.white_rgb">[docs]</a><span class="k">def</span> <span class="nf">white_rgb</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+<div class="viewcode-block" id="white_rgb"><a class="viewcode-back" href="../img2char.html#img.white_rgb">[docs]</a><span class="k">def</span> <span class="nf">white_rgb</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Returns an image in RGB format with all white pixel and size w * h	</span>
@@ -126,7 +126,7 @@
 	<span class="k">return</span> <span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">&#39;blancRGB.jpeg&#39;</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="white_grey"><a class="viewcode-back" href="../img.html#img.white_grey">[docs]</a><span class="k">def</span> <span class="nf">white_grey</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+<div class="viewcode-block" id="white_grey"><a class="viewcode-back" href="../img2char.html#img.white_grey">[docs]</a><span class="k">def</span> <span class="nf">white_grey</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot; </span>
 <span class="sd">  </span>
 <span class="sd">        Returns an image in grey format (&#39;L&#39;) with all white pixels and size w * h</span>
@@ -150,7 +150,7 @@
 	<span class="k">return</span> <span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">&#39;blancL.jpeg&#39;</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="white_bn"><a class="viewcode-back" href="../img.html#img.white_bn">[docs]</a><span class="k">def</span> <span class="nf">white_bn</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
+<div class="viewcode-block" id="white_bn"><a class="viewcode-back" href="../img2char.html#img.white_bn">[docs]</a><span class="k">def</span> <span class="nf">white_bn</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        Returns an image in black and white (&#39;1&#39;) with all white pixels and size w*h</span>
@@ -173,7 +173,7 @@
 	<span class="k">return</span> <span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">mode</span><span class="p">,</span> <span class="n">matrix</span><span class="p">(</span><span class="s1">&#39;blanc1.jpeg&#39;</span><span class="p">))</span></div>
 
 
-<div class="viewcode-block" id="mode"><a class="viewcode-back" href="../img.html#img.mode">[docs]</a><span class="k">def</span> <span class="nf">mode</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+<div class="viewcode-block" id="mode"><a class="viewcode-back" href="../img2char.html#img.mode">[docs]</a><span class="k">def</span> <span class="nf">mode</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Retuns the image mode</span>
 
@@ -191,7 +191,7 @@
         <span class="k">return</span> <span class="n">img</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div>
 
 
-<div class="viewcode-block" id="matrix"><a class="viewcode-back" href="../img.html#img.matrix">[docs]</a><span class="k">def</span> <span class="nf">matrix</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+<div class="viewcode-block" id="matrix"><a class="viewcode-back" href="../img2char.html#img.matrix">[docs]</a><span class="k">def</span> <span class="nf">matrix</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Returns the pixel matrix of the image</span>
 
@@ -224,7 +224,7 @@
 	<span class="k">return</span> <span class="n">fila</span></div>
 
 
-<div class="viewcode-block" id="img"><a class="viewcode-back" href="../img.html#img.img">[docs]</a><span class="k">def</span> <span class="nf">img</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
+<div class="viewcode-block" id="img"><a class="viewcode-back" href="../img2char.html#img.img">[docs]</a><span class="k">def</span> <span class="nf">img</span><span class="p">(</span><span class="n">matrix</span><span class="p">,</span> <span class="n">model</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">        This function has diferent utilities depending on the value of *model*</span>
@@ -327,7 +327,7 @@
 		<span class="k">return</span> <span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="n">matrix</span><span class="p">)</span></div>
 
 
-<div class="viewcode-block" id="get_w"><a class="viewcode-back" href="../img.html#img.get_w">[docs]</a><span class="k">def</span> <span class="nf">get_w</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+<div class="viewcode-block" id="get_w"><a class="viewcode-back" href="../img2char.html#img.get_w">[docs]</a><span class="k">def</span> <span class="nf">get_w</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">	Returns the image width</span>
@@ -345,7 +345,7 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#Totes les files tenen el mateix número de pixels</span></div>
 
 
-<div class="viewcode-block" id="get_h"><a class="viewcode-back" href="../img.html#img.get_h">[docs]</a><span class="k">def</span> <span class="nf">get_h</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
+<div class="viewcode-block" id="get_h"><a class="viewcode-back" href="../img2char.html#img.get_h">[docs]</a><span class="k">def</span> <span class="nf">get_h</span><span class="p">(</span><span class="n">img</span><span class="p">):</span>
 	<span class="sd">&quot;&quot;&quot;</span>
 
 <span class="sd">	Returns the image height</span>
@@ -364,7 +364,7 @@
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">img</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#Comptar quantes files hi ha, per tant, saber l&#39;alçada de la imatge en píxels</span></div>
 
 
-<div class="viewcode-block" id="subimg"><a class="viewcode-back" href="../img.html#img.subimg">[docs]</a><span class="k">def</span> <span class="nf">subimg</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ow</span><span class="p">,</span> <span class="n">oh</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+<div class="viewcode-block" id="subimg"><a class="viewcode-back" href="../img2char.html#img.subimg">[docs]</a><span class="k">def</span> <span class="nf">subimg</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">ow</span><span class="p">,</span> <span class="n">oh</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
 	<span class="sd">&#39;&#39;&#39;</span>
 
 <span class="sd">	Returns a sub-region of an image with size (w * h), starting at </span>

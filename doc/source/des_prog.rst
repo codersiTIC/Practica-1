@@ -100,8 +100,8 @@ and parameters. The next image show how are the diferent files connected:
 
 |
 
-Image mode
-==========
+Image modes
+===========
 
 When we talk about pictures from a computer point of view, we are talking about
 matrices of pixels, which defines with numbers the image pixel per pixel. We can

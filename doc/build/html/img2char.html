@@ -1,0 +1,162 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Module img2char &#8212; Practica 1 1.01 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Module split" href="split.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="split.html" title="Module split"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-img2char"></span><div class="section" id="id1">
+<h1>Module <em>img2char</em><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>The module <em>img2char</em> basically contains the functions for the color image proccessing, 
+like converting the fromat of the image into another, for example, convert an image in RGB 
+to a Greyscale format.</p>
+<p>This is the list of all of it:</p>
+<dl class="function">
+<dt id="img2char.img2char">
+<code class="descclassname">img2char.</code><code class="descname">img2char</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/img2char.html#img2char"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#img2char.img2char" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is the final module that contains merges all the modules together to get the digits
+of the car plate.</p>
+<p>It compares the digits splited with the patterns loaded, the licence plate must have 4 digits and 3 letters,
+if the machin doesn’t reconogsizes anything it will add <strong>‘?’</strong></p>
+<blockquote>
+<div><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">param img:</th><td class="field-body">Image file name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">type img:</th><td class="field-body">file</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">returns:</th><td class="field-body">The number of the license plate</td>
+</tr>
+<tr class="field-even field"><th class="field-name">rtype:</th><td class="field-body">str</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>$ python ~/GitProjects/Projecte/img2char.py
+$ python img2char.py
+
+********** LICENCE PLATE RECOGNIZER **********
+<span class="m">1</span> - Enter image file name <span class="o">(</span>use extension<span class="o">)</span>
+<span class="m">0</span> - Exit
+
+&gt; Enter option: <span class="m">1</span>
+&gt;&gt; Enter file name: m_4.jpeg
+<span class="m">8784</span> ???
+
+********** LICENCE PLATE RECOGNIZER **********
+<span class="m">1</span> - Enter image file name <span class="o">(</span>use extension<span class="o">)</span>
+<span class="m">0</span> - Exit
+
+&gt; Enter option: <span class="m">1</span>
+&gt;&gt; Enter file name: m_3.jpeg
+<span class="m">4130</span> ???
+
+********** LICENCE PLATE RECOGNIZER **********
+<span class="m">1</span> - Enter image file name <span class="o">(</span>use extension<span class="o">)</span>
+<span class="m">0</span> - Exit
+
+&gt; Enter option: <span class="m">1</span>       
+&gt;&gt; Enter file name: m_1.jpeg
+<span class="m">5134</span> ???
+
+********** LICENCE PLATE RECOGNIZER **********
+<span class="m">1</span> - Enter image file name <span class="o">(</span>use extension<span class="o">)</span>
+<span class="m">0</span> - Exit
+
+&gt; Enter option: <span class="m">1</span>
+&gt;&gt; Enter file name: m_2.jpeg
+<span class="m">3066</span> G??
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="split.html"
+                        title="previous chapter">Module <em>split</em></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="split.html" title="Module split"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, A. Anhari, M. Compte, D. Alamillo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>
