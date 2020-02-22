@@ -33,18 +33,18 @@ def null():
 
 def is_null(img):
 	"""
-
-        Checks if an image (Type, Matrix) is null
+	Checks if an image (Type, Matrix) is null
 
         :param img: Image representation (Type, Matrix)
         :type img: tuple
         :returns: True (if it is null) or False (if not)
         :rtype: bool
 
-	>>> is_null(('NULL',None))
+	>>> is_null(('NULL', None))
 	True
-    >>> is_null(('RGB',[(255,255,255),(255,255,255)]
-    False
+	>>> is_null(('RGB',[(255,255,255),(255,255,255)]))
+	False
+
 	"""
 
 	if img[0] == 'NULL' and img[1] == None:
