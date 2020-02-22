@@ -104,8 +104,8 @@
 
 <span class="sd">        Transforms a RGB image into a L image using *rgb_to_lum(i)* for each pixel tuple in RGB</span>
 
-<span class="sd">        :param i: Image</span>
-<span class="sd">        :type i: tuple  (&#39;RGB&#39;, Matrix)</span>
+<span class="sd">        :param i: Image (&#39;RGB&#39;, Matrix)</span>
+<span class="sd">        :type i: tuple</span>
 <span class="sd">        :returns: The an L image format from an RGB image</span>
 <span class="sd">        :rtype: tuple (&#39;L&#39;, Matrix)</span>
 
@@ -136,9 +136,9 @@
 	<span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">	Histogram of grey values of the L image i</span>
 
-<span class="sd">        :param i: Image</span>
-<span class="sd">        :type i: tuple  (&#39;RGB&#39;, Matrix)</span>
-<span class="sd">        :returns: A list of the 256 values (0 upto 250) of the grey scale values of the L format image</span>
+<span class="sd">        :param i: Image (Type, Matrix)</span>
+<span class="sd">        :type i: tuple</span>
+<span class="sd">        :returns: A list of the 256 values (0 upto 255) of the grey scale values of the L format image</span>
 <span class="sd">        :rtype: list</span>
 
 <span class="sd">	&gt;&gt;&gt; histogram((&#39;L&#39;, [[255, 255, 255, 255], [255, 255, 255, 255]]))</span>
@@ -237,8 +237,8 @@
 <span class="sd">        	But we’be translated the code that it is written natively in java to python and it didn&#39;t work, </span>
 <span class="sd">        	even though that the code is almost exactly the same.</span>
 
-<span class="sd">        :param i: Image </span>
-<span class="sd">        :type i: tuple  (&#39;RGB&#39;, Matrix)</span>
+<span class="sd">        :param i: Image (&#39;RGB&#39;, Matrix)</span>
+<span class="sd">        :type i: tuple</span>
 <span class="sd">        :returns: The an 1 image format from an RGB image using *luminance_img(i)*</span>
 <span class="sd">        :rtype: tuple (&#39;1&#39;, Matrix)</span>
 

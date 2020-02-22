@@ -4,7 +4,7 @@
 Module *transf*
 ===============
 
-The module *transf* contains the functions to manipulate the image, for example, to trim the image vertically and horizontally
+The module *transf* contains the functions to manipulate the image to trim the image vertically and horizontally
 to "cut" the digits toghether and scale the images ...
 
 
@@ -23,7 +23,7 @@ def vtrim(img):
         We'll trim the image if we have an 
         entire row of white pixels if not it returns the same image.
 
-    :param img: Image representation (Type, Matrix)
+    :param img: Image representation ('1', Matrix)
     :type img: tuple
     :returns: Returns vertical trimmed image ('1', Matrix)
 
@@ -121,7 +121,7 @@ def rotateMatrix(img_transposed):
     the work because we trim from the left rotating the image 
 
     :param img_transpsed: The image transposed
-    :type img: list
+    :type img_transpsed: list
     :returns: The image rotated 
     :rtype: list
 
@@ -147,9 +147,9 @@ def htrim(img):
     """
     This function trims the image horizontally using *Transmatrix(img)*, *whiteElim(img_transpsed)* and *rotateMatrix(img_transpsed)* 
 
-    :param img_transpsed: Image representation (Type, Matrix)
+    :param img: Image representation ('1', Matrix)
     :type img: tuple
-    :returns: The image rotated ('1', Matrix)
+    :returns: The image trimed ('1', Matrix)
     :rtype: tuple
 
     >>> htrim(('1',[[255,255,0],[255,0,255],[0,255,255]]))
@@ -182,8 +182,15 @@ def scale(img, h):
     """
     Scale image img taking into account height h preserving ratio aspect
 
-    El pixel de coordenades (a, b) de la imatge escalada es projecta sobre el pixel
-    (a*fh, b*fh) de la imatge original.
+    The pixel of coordinates (a,b) of the scaled image is projected from the pixel (a*fh, b*fh) of the 
+    original image, when fh = H/h
+
+    :param img: Image representation (Type, Matrix)
+    :type img: tuple
+    :param h: heigh and it must be >= 1
+    :type h: int
+    :returns: The image scalet to the h (heigh) value preserving the ratio aspect
+    :rtype: tuple (Type, Matrix)
 
     >>> scale(('RGB', [[(255, 255, 255), (255, 255, 255), (255, 255, 255)], [(255, 255, 255),(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255), (255, 255, 255)]]), 2)
     ('RGB', [[(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255)]])

@@ -1,0 +1,268 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Module transf &#8212; Practica 1 1.01 documentation</title>
+    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.01',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Module img2char" href="img2char.html" />
+    <link rel="prev" title="Module discret" href="discret.html" /> 
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="img2char.html" title="Module img2char"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="discret.html" title="Module discret"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <span class="target" id="module-transf"></span><div class="section" id="id1">
+<h1>Module <em>transf</em><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<p>The module <em>transf</em> contains the functions to manipulate the image to trim the image vertically and horizontally
+to “cut” the digits toghether and scale the images …</p>
+<p>This is the list of all of it:</p>
+<dl class="function">
+<dt id="transf.TransMatrix">
+<code class="descclassname">transf.</code><code class="descname">TransMatrix</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/transf.html#TransMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#transf.TransMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function it transposes the matrix in rows. We’ll use it later to trim horizontally and vertically</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>tuple</em>) – The image to transpose (‘1’, Matrix)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The image transposed</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">TransMatrix</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,[[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]]))</span>
+<span class="go">[[255, 255, 0], [255, 0, 255], [0, 255, 255]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">TransMatrix</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,[[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]]))</span>
+<span class="go">[[255, 255, 0], [255, 0, 255], [255, 255, 255]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="transf.htrim">
+<code class="descclassname">transf.</code><code class="descname">htrim</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/transf.html#htrim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#transf.htrim" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function trims the image horizontally using <em>Transmatrix(img)</em>, <em>whiteElim(img_transpsed)</em> and <em>rotateMatrix(img_transpsed)</em></p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>tuple</em>) – Image representation (‘1’, Matrix)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The image trimed (‘1’, Matrix)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">htrim</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,[[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]]))</span>
+<span class="go">(&#39;1&#39;, [[255], [0], [255]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">htrim</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,[[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">]]))</span>
+<span class="go">(&#39;1&#39;, [[0], [0], [255], [0], [255]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="transf.rotateMatrix">
+<code class="descclassname">transf.</code><code class="descname">rotateMatrix</code><span class="sig-paren">(</span><em>img_transposed</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/transf.html#rotateMatrix"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#transf.rotateMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>This functions will rotate the entire image, it is very useful to optimize 
+the work because we trim from the left rotating the image</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img_transpsed</strong> (<em>list</em>) – The image transposed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The image rotated</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rotateMatrix</span><span class="p">([[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]])</span>
+<span class="go">[[255, 255, 255], [255, 0, 255], [255, 255, 0]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rotateMatrix</span><span class="p">([[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]])</span>
+<span class="go">[[0, 255, 255], [255, 0, 255], [255, 255, 0]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="transf.scale">
+<code class="descclassname">transf.</code><code class="descname">scale</code><span class="sig-paren">(</span><em>img</em>, <em>h</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/transf.html#scale"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#transf.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale image img taking into account height h preserving ratio aspect</p>
+<p>The pixel of coordinates (a,b) of the scaled image is projected from the pixel (a*fh, b*fh) of the 
+original image, when fh = H/h</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>img</strong> (<em>tuple</em>) – Image representation (Type, Matrix)</li>
+<li><strong>h</strong> (<em>int</em>) – heigh and it must be &gt;= 1</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The image scalet to the h (heigh) value preserving the ratio aspect</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">tuple (Type, Matrix)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">scale</span><span class="p">((</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">[[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)],</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)],</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)]]),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">(&#39;RGB&#39;, [[(255, 255, 255), (255, 255, 255)], [(255, 255, 255), (255, 255, 255)]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">scale</span><span class="p">((</span><span class="s1">&#39;RGB&#39;</span><span class="p">,</span> <span class="p">[[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)],</span> <span class="p">[(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">),(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)],</span> <span class="p">[(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">),</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">)]]),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="go">(&#39;RGB&#39;, [[(0, 0, 0), (255, 0, 0)], [(0, 0, 255), (255, 255, 255)]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="transf.vtrim">
+<code class="descclassname">transf.</code><code class="descname">vtrim</code><span class="sig-paren">(</span><em>img</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/transf.html#vtrim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#transf.vtrim" title="Permalink to this definition">¶</a></dt>
+<dd><p>This functions trims the image vertically</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">We’ll trim the image if we have an 
+entire row of white pixels if not it returns the same image.</p>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<em>tuple</em>) – Image representation (‘1’, Matrix)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Returns vertical trimmed image (‘1’, Matrix)</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">tuple</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">vtrim</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,[[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]]))</span>
+<span class="go">(&#39;1&#39;, [[255, 255, 0], [255, 0, 255], [0, 255, 255]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">vtrim</span><span class="p">((</span><span class="s1">&#39;1&#39;</span><span class="p">,[[</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">255</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">255</span><span class="p">,</span><span class="mi">255</span><span class="p">]]))</span>
+<span class="go">(&#39;1&#39;, [[255, 0, 255], [0, 255, 255]])</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="transf.whiteElim">
+<code class="descclassname">transf.</code><code class="descname">whiteElim</code><span class="sig-paren">(</span><em>img_transposed</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/transf.html#whiteElim"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#transf.whiteElim" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function deletes the withe part from the left</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img_transposed</strong> – The image transposed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The image without the white part of the left</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">list</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">whiteElim</span><span class="p">([[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]])</span>
+<span class="go">[[255, 0, 255], [255, 255, 255]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">whiteElim</span> <span class="p">([[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">]])</span>
+<span class="go">[[255, 0, 255], [0, 255, 255]]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="discret.html"
+                        title="previous chapter">Module <em>discret</em></a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="img2char.html"
+                        title="next chapter">Module <em>img2char</em></a></p>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="img2char.html" title="Module img2char"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="discret.html" title="Module discret"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Practica 1 1.01 documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, A. Anhari, M. Compte, D. Alamillo.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.7.
+    </div>
+  </body>
+</html>

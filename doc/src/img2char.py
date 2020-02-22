@@ -4,12 +4,11 @@
 Module *img2char*
 =================
 
-The module *img2char* basically contains the functions for the color image proccessing, 
-like converting the fromat of the image into another, for example, convert an image in RGB 
-to a Greyscale format.
+The module *img2char* contains all the modules for processing the license plate and it returns an str of the 4 digits and 3 letters
+in case of matching.
 
 
-This is the list of all of it:
+There is basically a function called img2char that mainly combines the function to trim and split digits to process the matching:
 
 '''
 
@@ -20,13 +19,17 @@ def img2char(img):
     """
         This is the final module that contains merges all the modules together to get the digits
         of the car plate.\n
-        It compares the digits splited with the patterns loaded, the licence plate must have 4 digits and 3 letters,
-        if the machin doesn't reconogsizes anything it will add **'?'** 
+        It compares the digits splited with the patterns loaded and the licence plate must have 4 digits and 3 letters,
+        if the maching doesn't recognizes anything it will add **'?'** 
 
-            :param img: Image file name
-            :type img: file
-            :returns: The number of the license plate
-            :rtype: str
+        :param img: Image file name
+        :type img: file
+        :returns: The number of the license plate
+        :rtype: str
+
+        .. note::
+            As the maximum limit of 500KB, we cannot put the following images files,  but the images are those provided for us to make and
+            test the project.
 
         .. code-block:: bash
 
@@ -65,9 +68,20 @@ def img2char(img):
             >> Enter file name: m_2.jpeg
             3066 G??
 
+            ********** LICENCE PLATE RECOGNIZER **********
+            1 - Enter image file name (use extension)
+            0 - Exit
 
+            > Enter option: 1
+            >> Enter file name: m_5.jpeg
+            3547 NXB
 
+            ********** LICENCE PLATE RECOGNIZER **********
+            1 - Enter image file name (use extension)
+            0 - Exit
 
+            > Enter option: 0
+            Bye bye
 
     """
 

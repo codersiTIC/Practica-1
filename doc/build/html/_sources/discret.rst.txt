@@ -1,3 +1,3 @@
 .. automodule:: discret
-   :synopsis: The module that containt the image color processing
+   :synopsis: The module that contains the image color processing
    :members:

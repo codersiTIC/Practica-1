@@ -57,8 +57,8 @@ def luminance_img(i):
 
         Transforms a RGB image into a L image using *rgb_to_lum(i)* for each pixel tuple in RGB
 
-        :param i: Image
-        :type i: tuple  ('RGB', Matrix)
+        :param i: Image ('RGB', Matrix)
+        :type i: tuple
         :returns: The an L image format from an RGB image
         :rtype: tuple ('L', Matrix)
 
@@ -89,9 +89,9 @@ def histogram(i):
 	"""
 	Histogram of grey values of the L image i
 
-        :param i: Image
-        :type i: tuple  ('RGB', Matrix)
-        :returns: A list of the 256 values (0 upto 250) of the grey scale values of the L format image
+        :param i: Image (Type, Matrix)
+        :type i: tuple
+        :returns: A list of the 256 values (0 upto 255) of the grey scale values of the L format image
         :rtype: list
 
 	>>> histogram(('L', [[255, 255, 255, 255], [255, 255, 255, 255]]))
@@ -190,8 +190,8 @@ def rgb_to_bn(i):
         	But we’be translated the code that it is written natively in java to python and it didn't work, 
         	even though that the code is almost exactly the same.
 
-        :param i: Image 
-        :type i: tuple  ('RGB', Matrix)
+        :param i: Image ('RGB', Matrix)
+        :type i: tuple
         :returns: The an 1 image format from an RGB image using *luminance_img(i)*
         :rtype: tuple ('1', Matrix)
 

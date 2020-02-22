@@ -51,12 +51,11 @@
 <span class="sd">Module *img2char*</span>
 <span class="sd">=================</span>
 
-<span class="sd">The module *img2char* basically contains the functions for the color image proccessing, </span>
-<span class="sd">like converting the fromat of the image into another, for example, convert an image in RGB </span>
-<span class="sd">to a Greyscale format.</span>
+<span class="sd">The module *img2char* contains all the modules for processing the license plate and it returns an str of the 4 digits and 3 letters</span>
+<span class="sd">in case of matching.</span>
 
 
-<span class="sd">This is the list of all of it:</span>
+<span class="sd">There is basically a function called img2char that mainly combines the function to trim and split digits to process the matching:</span>
 
 <span class="sd">&#39;&#39;&#39;</span>
 
@@ -67,13 +66,17 @@
     <span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        This is the final module that contains merges all the modules together to get the digits</span>
 <span class="sd">        of the car plate.\n</span>
-<span class="sd">        It compares the digits splited with the patterns loaded, the licence plate must have 4 digits and 3 letters,</span>
-<span class="sd">        if the machin doesn&#39;t reconogsizes anything it will add **&#39;?&#39;** </span>
+<span class="sd">        It compares the digits splited with the patterns loaded and the licence plate must have 4 digits and 3 letters,</span>
+<span class="sd">        if the maching doesn&#39;t recognizes anything it will add **&#39;?&#39;** </span>
 
-<span class="sd">            :param img: Image file name</span>
-<span class="sd">            :type img: file</span>
-<span class="sd">            :returns: The number of the license plate</span>
-<span class="sd">            :rtype: str</span>
+<span class="sd">        :param img: Image file name</span>
+<span class="sd">        :type img: file</span>
+<span class="sd">        :returns: The number of the license plate</span>
+<span class="sd">        :rtype: str</span>
+
+<span class="sd">        .. note::</span>
+<span class="sd">            As the maximum limit of 500KB, we cannot put the following images files,  but the images are those provided for us to make and</span>
+<span class="sd">            test the project.</span>
 
 <span class="sd">        .. code-block:: bash</span>
 
@@ -112,9 +115,20 @@
 <span class="sd">            &gt;&gt; Enter file name: m_2.jpeg</span>
 <span class="sd">            3066 G??</span>
 
+<span class="sd">            ********** LICENCE PLATE RECOGNIZER **********</span>
+<span class="sd">            1 - Enter image file name (use extension)</span>
+<span class="sd">            0 - Exit</span>
 
+<span class="sd">            &gt; Enter option: 1</span>
+<span class="sd">            &gt;&gt; Enter file name: m_5.jpeg</span>
+<span class="sd">            3547 NXB</span>
 
+<span class="sd">            ********** LICENCE PLATE RECOGNIZER **********</span>
+<span class="sd">            1 - Enter image file name (use extension)</span>
+<span class="sd">            0 - Exit</span>
 
+<span class="sd">            &gt; Enter option: 0</span>
+<span class="sd">            Bye bye</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
